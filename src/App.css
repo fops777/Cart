@@ -1,20 +1,8 @@
-.App {
-  text-align: center;
+body {
+  overflow-y: scroll;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #f2f2f2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +12,227 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 0px 20px -10px black;
+}
+.header_flex {
+  justify-content: space-between;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  align-items: center;
+}
+.logo {
+  color: black;
+  line-height: 60px;
+  font-size: 32px;
+}
+.cart_icon {
+  font-weight: 600;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  position: relative;
+}
+.length_of_cartItems {
+  padding: 0px 5px;
+  font-size: 15px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  right: -6px;
+}
+.length_of_cartItems_0 {
+  padding: 0px 5px;
+  font-size: 15px;
+  background-color: grey;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  right: -6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ================================================================== */
+
+.store {
+  padding-top: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item {
+  width: 300px;
+  background-color: white;
+  margin-bottom: 50px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px -10px black;
+  margin: 30px 50px;
+  padding: 20px;
+  position: relative;
+}
+.exist_in_cart {
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  font-size: 30px;
+  color: grey;
+  float: right;
+  opacity: 0.3;
+}
+.exist_in_cart.active {
+  color:lime;
+  font-weight: 600;
+  /* border: 1px solid lime; */
+  /* padding: 0px 8px; */
+  border-radius: 50%;
+  opacity: 1;
+}
+.item_img {
+  height: 300px;
+  width: 250px;
+}
+.item_title {
+  color: black;
+  font-size: 25px;
+}
+.item_price {
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  float: right;
+  margin: 20px 10px 20px 0px;
+}
+.item_description {
+  font-size: 14px;
+  color: grey;
+  padding: 30px;
+}
+.button {
+  background-color: transparent;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border: 2px solid chartreuse;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: chartreuse;
+  color: white;
+}
+
+/* ========================================= */
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.2s;
+}
+.modal.active {
+  pointer-events: all;
+  opacity: 1;
+}
+.modal_content {
+  color: black;
+  padding: 0px 15px 15px 15px;
+  background-color: white;
+  height: 100%;
+  float: right;
+  font-size: 20px;
+  width: 400px;
+  overflow: auto;
+}
+.modal_content input {
+  margin: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+.modal_content button {
+  padding: 5px 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.total_price{
+  font-size: 25px;
+  font-weight: 600;
+  border-bottom: 2px solid grey;
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.clear_cart{
+  color:tomato;
+  font-size: 20px;  
+  cursor: pointer;
+  padding-right: 15px;
+}
+.clear_cart:hover{
+  color: red;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.total_price span{
+  font-size: 33px;
+  font-weight: 700;
+  letter-spacing: 1wpx;
+}
+
+.product_in_cart {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  padding: 20px;
+  border-bottom: 2px solid grey;
+  align-items: center;
+}
+
+.cart_left_side {
+  margin-right: 25px;
+}
+.left_cart_btns_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+.button_ + {
+  margin: 0;
+  padding: 0;
+}
+.image {
+  height: 100px;
+  min-width: 100px;
+}
+.cart_price {
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  float: right;
+}
+
+.empty_img {
+  width: 200px;
+  height: 200px;
+  color: black;
+  font-size: 50px;
+  font-weight: 700;
+  opacity: 0.4;
+  margin: 240px 0px 0px 110px;
 }
